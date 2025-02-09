@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import DataTable from "react-data-table-component"
 import ExportDropdown from './ExportDropdown';
-
+import { IconButton } from '@mui/material';
+import ModeEditOutlinedIcon from '@mui/icons-material/ModeEditOutlined';
+import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
 
 const UserManagement = () => {
     const columns = [
@@ -27,7 +29,20 @@ const UserManagement = () => {
         },
         {
             name: "Action",
-            selector: (row) => row.action
+            // selector: (row) => row.action
+            cell: (row) => (
+                <div>
+                  <IconButton onClick={() => handleEdit(row)} color="primary">
+                    <ModeEditOutlinedIcon />
+                  </IconButton>
+                  <IconButton onClick={() => handleDelete(row)} color="secondary">
+                    <DeleteOutlinedIcon />
+                  </IconButton>
+                </div>
+              ),
+              ignoreRowClick: true,
+              allowOverflow: true,
+              button: true,
         }
     ];
     const data = [

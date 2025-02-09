@@ -52,12 +52,12 @@ const HomePage = () => {
     return (
         <div>
             <CssBaseline />
-            <AppBar position="static">
+            <AppBar position="static" className='header'>
                 <Toolbar>
                     <IconButton edge="start" color="inherit" aria-label="menu" onClick={handleDrawerToggle}>
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" component="div">
+                    <Typography variant="h6" component="div" style={{color:"black!important"}}>
                         SAFETY ANALYTICS
                     </Typography>
                     <Box sx={{ flexGrow: 15 }} />
@@ -95,7 +95,7 @@ const HomePage = () => {
             </AppBar>
 
             <Box display="flex">
-                <Drawer
+                <Drawer className='drawer'
                     variant="persistent"
                     anchor="left"
                     open={drawerOpen}
@@ -110,7 +110,7 @@ const HomePage = () => {
                         </ListItem>
                     </List> */}
 
-                    <Box sx={{ minHeight: 352, minWidth: 250, padding: '10px' }}>
+                    <Box className="treeview" sx={{ minHeight: 352, minWidth: 250, padding: '10px' }}>
                         <SimpleTreeView>
                             <TreeItem itemId="dashboard" label="Dashboard" onClick={() => handleItemClick('dashboard')}></TreeItem>
                             <TreeItem itemId="safety-analytics" label="Safety Analytics 360" onClick={() => handleItemClick('safety-analytics')}></TreeItem>

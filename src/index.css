@@ -69,8 +69,10 @@ button:focus-visible {
   }
 }
 
-.css-1lwhjos-MuiPaper-root-MuiDrawer-paper{
+.MuiDrawer-paperAnchorLeft, .MuiDrawer-paperAnchorDockedLeft{
   top: 64px !important;
+  background-color: #1976d2 !important ;
+  color: #ffffff !important;
 }
 
 .MuiTreeItem-label{
@@ -83,24 +85,19 @@ button:focus-visible {
   font-weight: 100 !important;
 }
 
-.css-ptdwpq-MuiPaper-root-MuiAppBar-root{
-  color:black !important;
+.header{
   background-color: #ffffff !important;
-}
-.css-1fytndg-MuiButtonBase-root-MuiIconButton-root, .css-ij6izv-MuiButtonBase-root-MuiIconButton-root,
-.css-h7cjts-MuiButtonBase-root-MuiIconButton-root {
   color: #1976d2 !important;
 }
+/* .css-1fytndg-MuiButtonBase-root-MuiIconButton-root, .css-ij6izv-MuiButtonBase-root-MuiIconButton-root,
+.css-h7cjts-MuiButtonBase-root-MuiIconButton-root {
+  color: #1976d2 !important;
+} */
 
-.css-1lwhjos-MuiPaper-root-MuiDrawer-paper{
-  background-color: #1976d2 !important ;
-  color: #ffffff !important;
-}
-
-.css-1kk8xoz-MuiTreeItem-content.Mui-selected{
+.Mui-selected{
   background-color: rgb(60, 179, 113)  !important;
 }
 
-.css-1iw3t7y-MuiFormControl-root{
+/* .css-1iw3t7y-MuiFormControl-root{
   min-width: 200px !important;
-}
+} */

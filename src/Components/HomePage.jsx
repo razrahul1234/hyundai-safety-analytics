@@ -1,0 +1,136 @@
+import React, { useState } from 'react';
+import { AppBar, Toolbar, Typography, IconButton, Drawer, List, ListItem, ListItemText, Menu, MenuItem, CssBaseline, Box } from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
+import NotificationsIcon from '@mui/icons-material/Notifications';
+import AccountCircle from '@mui/icons-material/AccountCircle';
+import { SimpleTreeView } from '@mui/x-tree-view/SimpleTreeView';
+import { TreeItem } from '@mui/x-tree-view/TreeItem';
+import UserManagement from './UserManagement';
+
+const drawerWidth = 240;
+
+
+const HomePage = () => {
+    const [drawerOpen, setDrawerOpen] = useState(false);
+    const [anchorEl, setAnchorEl] = useState(null);
+    const [selectedItem, setSelectedItem] = useState('dashboard');
+
+    const handleDrawerToggle = () => {
+        setDrawerOpen(!drawerOpen);
+    };
+
+    const handleMenu = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
+
+    const handleItemClick = (itemId) => {
+        setSelectedItem(itemId);
+    };
+
+    const renderContent = () => {
+        switch (selectedItem) {
+            case 'dashboard':
+                return <h2>Dashboard Content</h2>;
+            case 'safety-analytics':
+                return <h2>Safety Analytics 360 Content</h2>;
+            case 'data-source':
+                return <h2>Data Source Content</h2>;
+            case 'user-management':
+                return <UserManagement />;
+            default:
+                return <h2>Welcome</h2>;
+        }
+    };
+
+    return (
+        <div>
+            <CssBaseline />
+            <AppBar position="static">
+                <Toolbar>
+                    <IconButton edge="start" color="inherit" aria-label="menu" onClick={handleDrawerToggle}>
+                        <MenuIcon />
+                    </IconButton>
+                    <Typography variant="h6" component="div">
+                        Safety Analytics
+                    </Typography>
+                    <Box sx={{ flexGrow: 15 }} />
+                    <IconButton color="inherit">
+                        <NotificationsIcon />
+                    </IconButton>
+                    <IconButton
+                        edge="end"
+                        color="inherit"
+                        aria-label="account of current user"
+                        aria-controls="menu-appbar"
+                        aria-haspopup="true"
+                        onClick={handleMenu}
+                    >
+                        <AccountCircle />
+                    </IconButton>
+                    <Menu
+                        id="menu-appbar"
+                        anchorEl={anchorEl}
+                        anchorOrigin={{
+                            vertical: 'top',
+                            horizontal: 'right',
+                        }}
+                        keepMounted
+                        transformOrigin={{
+                            vertical: 'top',
+                            horizontal: 'right',
+                        }}
+                        Close={handleClose}
+                    >
+                        <MenuItem onClick={handleClose}>Profile</MenuItem>
+                        <MenuItem onClick={handleClose}>My account</MenuItem>
+                    </Menu>
+                </Toolbar>
+            </AppBar>
+
+            <Box display="flex">
+                <Drawer
+                    variant="persistent"
+                    anchor="left"
+                    open={drawerOpen}
+                    onClose={handleDrawerToggle}>
+                    {/* <List>
+                        <ListItemText primary="Menu 1" />
+                        <ListItem button>
+                            <ListItemText primary="Menu 2" />
+                        </ListItem>
+                        <ListItem button>
+                            <ListItemText primary="Menu 3" />
+                        </ListItem>
+                    </List> */}
+
+                    <Box sx={{ minHeight: 352, minWidth: 250, padding:'10px' }}>
+                        <SimpleTreeView>
+                            <TreeItem itemId="dashboard" label="Dashboard" onClick={() => handleItemClick('dashboard')}></TreeItem>
+                            <TreeItem itemId="safety-analytics" label="Safety Analytics 360" onClick={() => handleItemClick('safety-analytics')}></TreeItem>
+                            <TreeItem itemId="config" label="Configuartion">
+                                <TreeItem itemId="data-source" label="Data Source" onClick={() => handleItemClick('data-source')} />
+                                <TreeItem itemId="user-management" label="User Management" onClick={() => handleItemClick('user-management')} />
+                            </TreeItem>
+                        </SimpleTreeView>
+                    </Box>
+                </Drawer>
+                <main style={{
+                    flexGrow: 1,
+                    padding: '16px',
+                    marginLeft: drawerOpen ? drawerWidth : 0,
+                    transition: 'margin 0.3s',
+                }}>
+                    {/* Your page content goes here */}
+                    {renderContent()}
+                </main>
+            </Box>
+
+        </div>
+    );
+};
+
+export default HomePage;

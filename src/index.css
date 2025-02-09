@@ -5,7 +5,9 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* background-color: #242424; */
+  /* background-color: dodgerblue; */
+
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -25,7 +27,7 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  /* place-items: center; */
   min-width: 320px;
   min-height: 100vh;
 }
@@ -65,4 +67,32 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+.css-1lwhjos-MuiPaper-root-MuiDrawer-paper{
+  top: 64px !important;
+}
+
+.MuiTreeItem-label{
+  order:1 !important;
+  font-weight: 100 !important;
+}
+
+.MuiTreeItem-iconContainer{
+  order:2 !important;
+  font-weight: 100 !important;
+}
+
+.css-ptdwpq-MuiPaper-root-MuiAppBar-root{
+  color:black !important;
+  background-color: #ffffff !important;
+}
+.css-1fytndg-MuiButtonBase-root-MuiIconButton-root, .css-ij6izv-MuiButtonBase-root-MuiIconButton-root,
+.css-h7cjts-MuiButtonBase-root-MuiIconButton-root {
+  color: #1976d2 !important;
+}
+
+.css-1lwhjos-MuiPaper-root-MuiDrawer-paper{
+  background-color: #1976d2 !important ;
+  color: #ffffff !important;
 }

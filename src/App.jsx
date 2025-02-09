@@ -1,14 +1,16 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
+// import { useState } from 'react'
+// import reactLogo from './assets/react.svg'
+// import viteLogo from '/vite.svg'
+import './App.css';
+import {LandingPage} from "./Components/LandingPage";
+import HomePage from './Components/HomePage';
+import { BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
 function App() {
-  const [count, setCount] = useState(0)
+  // const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
+      {/* <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
@@ -27,7 +29,17 @@ function App() {
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
-      </p>
+      </p> */}
+      <Router basename="/hyundai-safety-analytics/">
+        {/* <nav>
+          <Link to="/">Home</Link>
+          <Link to="/conference"></Link>
+        </nav> */}
+        <Routes>
+          <Route path='/' element={<LandingPage />}></Route>
+          <Route path='homepage' element={<HomePage />}></Route>
+        </Routes>
+      </Router>      
     </>
   )
 }

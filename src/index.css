@@ -93,11 +93,10 @@ button:focus-visible {
 .css-h7cjts-MuiButtonBase-root-MuiIconButton-root {
   color: #1976d2 !important;
 } */
+.titlename{
+  color: black !important;
+}
 
 .Mui-selected{
   background-color: rgb(60, 179, 113)  !important;
 }
-
-/* .css-1iw3t7y-MuiFormControl-root{
-  min-width: 200px !important;
-} */

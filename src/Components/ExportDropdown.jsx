@@ -35,7 +35,7 @@ const ExportDropdown = ({ data }) => {
   };
 
   return (
-    <FormControl variant="outlined" style={{ minWidth: 120 }}>
+    <FormControl variant="outlined" style={{ minWidth: 200 }}>
       <InputLabel>Download Report As</InputLabel>
       <Select onChange={handleExport} label="Export">
         <MenuItem value="csv">CSV</MenuItem>

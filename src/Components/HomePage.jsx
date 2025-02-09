@@ -57,7 +57,7 @@ const HomePage = () => {
                     <IconButton edge="start" color="inherit" aria-label="menu" onClick={handleDrawerToggle}>
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" component="div" style={{color:"black!important"}}>
+                    <Typography variant="h6" component="div" className='titlename'>
                         SAFETY ANALYTICS
                     </Typography>
                     <Box sx={{ flexGrow: 15 }} />
@@ -114,7 +114,7 @@ const HomePage = () => {
                         <SimpleTreeView>
                             <TreeItem itemId="dashboard" label="Dashboard" onClick={() => handleItemClick('dashboard')}></TreeItem>
                             <TreeItem itemId="safety-analytics" label="Safety Analytics 360" onClick={() => handleItemClick('safety-analytics')}></TreeItem>
-                            <TreeItem itemId="config" label="Configuartion">
+                            <TreeItem itemId="config" label="Configuration">
                                 <TreeItem itemId="data-source" label="Data Source" onClick={() => handleItemClick('data-source')} />
                                 <TreeItem itemId="user-management" label="User Management" onClick={() => handleItemClick('user-management')} />
                             </TreeItem>

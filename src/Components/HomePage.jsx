@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { AppBar, Toolbar, Typography, IconButton, Drawer, List, ListItem, ListItemText, Menu, MenuItem, CssBaseline, Box } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import NotificationsIcon from '@mui/icons-material/Notifications';
@@ -7,11 +7,11 @@ import { SimpleTreeView } from '@mui/x-tree-view/SimpleTreeView';
 import { TreeItem } from '@mui/x-tree-view/TreeItem';
 import UserManagement from './UserManagement';
 
-const drawerWidth = 240;
+const drawerWidth = 251;
 
 
 const HomePage = () => {
-    const [drawerOpen, setDrawerOpen] = useState(false);
+    const [drawerOpen, setDrawerOpen] = useState(true);
     const [anchorEl, setAnchorEl] = useState(null);
     const [selectedItem, setSelectedItem] = useState('dashboard');
 
@@ -40,7 +40,10 @@ const HomePage = () => {
             case 'data-source':
                 return <h2>Data Source Content</h2>;
             case 'user-management':
-                return <UserManagement />;
+                return <>
+                    <h2 style={{ margin: 0, fontWeight: 100 }}>User Management</h2>
+                    <UserManagement />
+                </>;
             default:
                 return <h2>Welcome</h2>;
         }
@@ -55,7 +58,7 @@ const HomePage = () => {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" component="div">
-                        Safety Analytics
+                        SAFETY ANALYTICS
                     </Typography>
                     <Box sx={{ flexGrow: 15 }} />
                     <IconButton color="inherit">
@@ -107,7 +110,7 @@ const HomePage = () => {
                         </ListItem>
                     </List> */}
 
-                    <Box sx={{ minHeight: 352, minWidth: 250, padding:'10px' }}>
+                    <Box sx={{ minHeight: 352, minWidth: 250, padding: '10px' }}>
                         <SimpleTreeView>
                             <TreeItem itemId="dashboard" label="Dashboard" onClick={() => handleItemClick('dashboard')}></TreeItem>
                             <TreeItem itemId="safety-analytics" label="Safety Analytics 360" onClick={() => handleItemClick('safety-analytics')}></TreeItem>
@@ -123,6 +126,8 @@ const HomePage = () => {
                     padding: '16px',
                     marginLeft: drawerOpen ? drawerWidth : 0,
                     transition: 'margin 0.3s',
+                    backgroundColor: "#f2f4f4",
+                    "min-height": "100vh"
                 }}>
                     {/* Your page content goes here */}
                     {renderContent()}

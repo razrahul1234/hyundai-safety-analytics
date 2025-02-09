@@ -96,3 +96,11 @@ button:focus-visible {
   background-color: #1976d2 !important ;
   color: #ffffff !important;
 }
+
+.css-1kk8xoz-MuiTreeItem-content.Mui-selected{
+  background-color: rgb(60, 179, 113)  !important;
+}
+
+.css-1iw3t7y-MuiFormControl-root{
+  min-width: 200px !important;
+}

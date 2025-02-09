@@ -6,6 +6,7 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import { SimpleTreeView } from '@mui/x-tree-view/SimpleTreeView';
 import { TreeItem } from '@mui/x-tree-view/TreeItem';
 import UserManagement from './UserManagement';
+import Dashboard from "./Dashboard";
 
 const drawerWidth = 251;
 
@@ -34,7 +35,10 @@ const HomePage = () => {
     const renderContent = () => {
         switch (selectedItem) {
             case 'dashboard':
-                return <h2>Dashboard Content</h2>;
+                return <>
+                    <h2 style={{ margin: 0, fontWeight: 100 }}>Dashboard</h2>
+                    <Dashboard />
+                </>;
             case 'safety-analytics':
                 return <h2>Safety Analytics 360 Content</h2>;
             case 'data-source':

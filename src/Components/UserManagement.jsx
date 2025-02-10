@@ -100,7 +100,7 @@ const UserManagement = () => {
     return (
         <div style={{ backgroundColor: "white" }}>
             <div style={{display:'flex', msFlexDirection:"row", placeSelf:"end",  padding: '10px', gap:"10px"}}>
-            <button style={{backgroundColor:"yellow", color:"black"}}>Add New</button>
+            <button style={{backgroundColor:"yellow", color:"black", height:"40px", margin:'auto'}}>Add New</button>
             <ExportDropdown data={data} />
             </div>
             
